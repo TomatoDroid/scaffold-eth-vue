@@ -40,7 +40,7 @@ const dropMenu = computed(() => [menu.value])
                 </UDropdown>
             </div>
         </div>
-        <div>
+        <div flex="~ items-center gap-2" mr-4>
             <WalletConnect />
         </div>
     </header>

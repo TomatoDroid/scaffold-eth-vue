@@ -7,5 +7,13 @@ export default defineNuxtConfig({
     port: 3001
   },
 
-  modules: ['@unocss/nuxt', '@nuxt/ui', '@wagmi/vue/nuxt']
+  modules: [
+    '@unocss/nuxt',
+    '@nuxt/ui',
+    '@wagmi/vue/nuxt',
+    '@pinia/nuxt'
+  ],
+  pinia: {
+    storesDirs: ['./stores/**'],
+  },
 })
