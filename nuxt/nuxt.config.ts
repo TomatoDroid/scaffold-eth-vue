@@ -16,4 +16,9 @@ export default defineNuxtConfig({
   pinia: {
     storesDirs: ['./stores/**'],
   },
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => tag.startsWith("w3m-")
+    }
+  }
 })

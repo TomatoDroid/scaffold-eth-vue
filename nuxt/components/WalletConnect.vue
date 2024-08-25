@@ -33,29 +33,9 @@ const items = ref([
 
 <template>
     <div>
-        <UButton v-if="!isConnected" @click="isOpen = true">
-            Connect Wallet
-        </UButton>
-        <div v-else flex="~ items-center gap-2">
-            <div flex="~ col items-center" text-xs mr-2>
-                <span cursor-pointer>
-                    0.0000
-                    <span font-bold>ETH</span>
-                </span>
-                <span>Hardhat</span>
-            </div>
-            <UDropdown :items="items">
-                <UButton color="white" trailing-icon="i-heroicons-chevron-down-20-solid">
-                    <span>{{ displayAddress }}</span>
-                </UButton>
-                <template #account="{ item }">
-                    <div flex="~ items-center gap-2" text-red-4>
-                        <UIcon w-5 h-5 :name="item.icon" />
-                        <span>{{ item.label }}</span>
-                    </div>
-                </template>
-            </UDropdown>
-            <!-- <FaucetButton /> -->
+        <div flex="~ justify-center items-center gap-1">
+            <w3m-button/>
+            <FaucetButton />
         </div>
         <UModal v-model="isOpen">
             <div p-4>

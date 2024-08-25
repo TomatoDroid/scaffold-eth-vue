@@ -1,5 +1,6 @@
 import scaffoldConfig from "~/scaffold.config"
 import { NETWORKS_EXTRA_DATA } from "~/utils/scaffold-eth/networks"
+import { useAccount } from "@wagmi/vue"
 
 /**
  * Retrieves the connected wallet's network from scaffold.config or defaults to the 0th network in the list if the wallet is not connected.
@@ -9,7 +10,7 @@ export function useTargetNetwork() {
     const { targetNetwork } = storeToRefs(useGlobalStore())
 
     watch(() => chain.value, (newTargetNetwork) => {
-        debugger
+        if (!newTargetNetwork) return
         const newSelectedNetwork = scaffoldConfig.targetNetworks.find((network) => network.id === newTargetNetwork.id)
         if (newSelectedNetwork && newSelectedNetwork.id !== targetNetwork.value.id) {
             targetNetwork.value = newSelectedNetwork
