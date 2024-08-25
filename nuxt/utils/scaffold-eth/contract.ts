@@ -1,6 +1,6 @@
-import type { TransactionReceipt } from "viem";
+import type { TransactionReceipt } from 'viem'
 
-export type TransactorFuncOptions = {
-    onBlockConfirmation?: (txnReceipt: TransactionReceipt) => void;
-    blockConfirmations?: number,
+export interface TransactorFuncOptions {
+  onBlockConfirmation?: (txnReceipt: TransactionReceipt) => void
+  blockConfirmations?: number
 }

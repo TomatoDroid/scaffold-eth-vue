@@ -29,7 +29,8 @@
     "precommit": "lint-staged",
     "vercel": "pnpm --filter @se-2/nextjs vercel",
     "vercel:yolo": "pnpm --filter @se-2/nextjs vercel:yolo",
-    "dev": "npm -C nuxt run dev"
+    "dev": "npm -C nuxt run dev",
+    "lint:fix": "npm -C nuxt run lint:fix"
   },
   "devDependencies": {
     "husky": "^8.0.1",

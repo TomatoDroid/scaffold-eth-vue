@@ -1,14 +1,14 @@
 // uno.config.ts
-import { defineConfig, presetAttributify, presetUno, presetIcons,transformerDirectives } from 'unocss'
+import { defineConfig, presetAttributify, presetIcons, presetUno, transformerDirectives } from 'unocss'
 
 export default defineConfig({
   // ...UnoCSS options
   presets: [
     presetAttributify(),
     presetUno(),
-    presetIcons()
+    presetIcons(),
   ],
   transformers: [
-    transformerDirectives()
-  ]
+    transformerDirectives(),
+  ],
 })

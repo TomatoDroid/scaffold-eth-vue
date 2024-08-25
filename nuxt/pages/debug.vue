@@ -1,3 +1,3 @@
 <template>
-    debug
+  debug
 </template>
