@@ -46,6 +46,22 @@ const isBalanceZero = computed(() => {
 
 <template>
   <div
+    :class="[
+      !isBalanceZero
+        ? 'ml-1'
+        : 'ml-1 tooltip tooltip-bottom tooltip-secondary tooltip-open font-bold before:left-auto before:transform-none before:right-0']"
+    data-tip="Grab funds from faucet"
+  >
+    <button
+      class="btn btn-secondary btn-sm px-2 rounded-full"
+      :disabled="loading"
+      @click="sendETH"
+    >
+      <span v-if="loading" class="loading loading-spainner loading-xs" />
+      <Icon v-else name="i-uil-bill" class="h-4 w-4" />
+    </button>
+  </div>
+  <!-- <div
     v-if="connedtedChain?.id === hardhat.id"
     class="relative"
   >
@@ -54,14 +70,13 @@ const isBalanceZero = computed(() => {
       class="ml-1 tooltip tooltip-bottom tooltip-secondary tooltip-open font-bold before:left-auto before:transform-none before:content-[attr(data-tip)] before:right-0"
       data-tip="Grab funds from faucet"
     >
-      <!-- <div border="6px solid gray-800" absolute right-10% h-0 w-0 transform-rotate-45 -top-3px /> -->
       <UButton
         class="color-gray"
         :loading="loading"
         :disabled="loading"
-        icon="i-fa-solid-faucet"
+        icon="i-uil-bill"
         cvariant="solid" @click="sendETH"
       />
     </div>
-  </div>
+  </div> -->
 </template>
