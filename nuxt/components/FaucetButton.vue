@@ -13,7 +13,7 @@ const localWalletClient = createWalletClient({
 
 const { address, chain: connedtedChain } = useAccount()
 
-// const { data: balance } = useWatchBalance({ address })
+const { data: balance } = useWatchBalance({ address })
 
 const faucetTxn = useTransactor(localWalletClient)
 
@@ -38,14 +38,30 @@ async function sendETH() {
     loading.value = false
   }
 }
+
+const isBalanceZero = computed(() => {
+  return balance.value && balance.value.value === 0n
+})
 </script>
 
 <template>
-  <div v-if="connedtedChain?.id === hardhat.id">
-    <UButton
-      :loading="loading"
-      icon="i-fa-solid-faucet"
-      color="gray" variant="solid" @click="sendETH"
-    />
+  <div
+    v-if="connedtedChain?.id === hardhat.id"
+    class="relative"
+  >
+    <div
+      v-if="isBalanceZero"
+      class="ml-1 tooltip tooltip-bottom tooltip-secondary tooltip-open font-bold before:left-auto before:transform-none before:content-[attr(data-tip)] before:right-0"
+      data-tip="Grab funds from faucet"
+    >
+      <!-- <div border="6px solid gray-800" absolute right-10% h-0 w-0 transform-rotate-45 -top-3px /> -->
+      <UButton
+        class="color-gray"
+        :loading="loading"
+        :disabled="loading"
+        icon="i-fa-solid-faucet"
+        cvariant="solid" @click="sendETH"
+      />
+    </div>
   </div>
 </template>

@@ -8,10 +8,11 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@unocss/nuxt',
-    '@nuxt/ui',
+    '@nuxtjs/tailwindcss',
     '@wagmi/vue/nuxt',
     '@pinia/nuxt',
+    '@nuxt/icon',
+    '@vueuse/nuxt',
   ],
   pinia: {
     storesDirs: ['./stores/**'],
@@ -20,5 +21,12 @@ export default defineNuxtConfig({
     compilerOptions: {
       isCustomElement: tag => tag.startsWith('w3m-'),
     },
+  },
+  tailwindcss: {
+    // Options
+  },
+  icon: {
+    mode: 'svg',
+    size: '1.5em',
   },
 })

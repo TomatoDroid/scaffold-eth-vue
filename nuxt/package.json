@@ -13,24 +13,27 @@
   },
   "dependencies": {
     "@tanstack/vue-query": "^5.51.21",
-    "@unocss/reset": "^0.61.9",
     "@wagmi/connectors": "^5.1.7",
     "@wagmi/core": "^2.13.4",
     "@wagmi/vue": "^0.0.36",
     "@web3modal/wagmi": "^5.1.1",
     "burner-connector": "^0.0.8",
+    "daisyui": "^4.12.10",
     "nuxt": "^3.12.4",
     "viem": "^2.19.1",
     "vue": "latest"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.1",
-    "@iconify/json": "^2.2.234",
-    "@nuxt/ui": "^2.18.4",
+    "@iconify-json/uil": "^1.1.9",
+    "@nuxt/icon": "^1.5.0",
+    "@nuxtjs/tailwindcss": "^6.12.1",
     "@pinia/nuxt": "^0.5.3",
     "@unocss/eslint-plugin": "^0.62.2",
-    "@unocss/nuxt": "^0.61.9",
+    "@vueuse/core": "^11.0.3",
+    "@vueuse/nuxt": "^11.0.3",
     "eslint": "^9.9.0",
-    "eslint-plugin-format": "^0.1.2"
+    "eslint-plugin-format": "^0.1.2",
+    "tailwindcss": "^3.4.10"
   }
 }

@@ -13,13 +13,13 @@ function handleConnect(connector: Connector) {
 
 <template>
   <div>
-    <div flex="~ justify-center items-center gap-1">
+    <div class="flex justify-center items-center gap-1">
       <w3m-button balance="false" />
       <FaucetButton />
     </div>
     <UModal v-model="isOpen">
-      <div p-4>
-        <div v-for="connector in connectors" :key="connector.id" mb-4>
+      <div class="p-4">
+        <div v-for="connector in connectors" :key="connector.id" class="mb-4">
           <UButton @click="handleConnect(connector)">
             {{ connector.name }}
           </UButton>

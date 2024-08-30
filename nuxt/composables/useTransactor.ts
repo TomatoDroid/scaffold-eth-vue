@@ -17,7 +17,7 @@ type TransactionFunc = (
  * @returns function that takes in transaction function as callback, shows UI feedback for transaction and returns a promise of the transaction hash
  */
 export function useTransactor(_walletClient?: WalletClient) {
-  const toast = useToast()
+  // const toast = useToast()
 
   const walletClient = ref<WalletClient | undefined>(_walletClient)
 
@@ -30,7 +30,7 @@ export function useTransactor(_walletClient?: WalletClient) {
 
   const result: TransactionFunc = async (tx, options) => {
     if (!walletClient.value) {
-      toast.add({ title: 'Please connect wallet first' })
+      // toast.add({ title: 'Please connect wallet first' })
       console.error('⚡️ ~ file: useTransactor.tsx ~ error')
       return
     }
@@ -41,11 +41,11 @@ export function useTransactor(_walletClient?: WalletClient) {
       const network = await walletClient.value.getChainId()
       const publicClient = getPublicClient(config)
 
-      toast.add({
-        id: notificationId,
-        title: 'Awaiting for user confirmation',
-        icon: 'i-mdi-loading',
-      })
+      // toast.add({
+      //   id: notificationId,
+      //   title: 'Awaiting for user confirmation',
+      //   icon: 'i-mdi-loading',
+      // })
       if (typeof tx === 'function') {
         transactionHash = await tx()
       }
@@ -55,25 +55,25 @@ export function useTransactor(_walletClient?: WalletClient) {
       else {
         throw new Error('Incorrect transaction passed to transactor')
       }
-      toast.remove(notificationId)
+      // toast.remove(notificationId)
 
       const blockExplorerTxURL = network ? getBlockExplorerTxLink(network, transactionHash) : ''
 
-      toast.add({ id: notificationId, title: 'Waiting for transaction to complete.', description: `${blockExplorerTxURL}` })
+      // toast.add({ id: notificationId, title: 'Waiting for transaction to complete.', description: `${blockExplorerTxURL}` })
 
       const transactionReceipt = await publicClient.waitForTransactionReceipt({
         hash: transactionHash,
         confirmations: options?.blockConfirmations,
       })
-      toast.remove(notificationId)
-      toast.add({ id: notificationId, title: 'Transaction completed successfully!', description: `${blockExplorerTxURL}` })
+      // toast.remove(notificationId)
+      // toast.add({ id: notificationId, title: 'Transaction completed successfully!', description: `${blockExplorerTxURL}` })
 
       if (options?.onBlockConfirmation)
         options.onBlockConfirmation(transactionReceipt)
     }
     catch (error) {
       if (notificationId) {
-        toast.remove(notificationId)
+        // toast.remove(notificationId)
       }
       console.error('⚡️ ~ file: useTransactor.ts ~ error', error)
       throw error
