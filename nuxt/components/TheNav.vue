@@ -4,8 +4,6 @@ const menu = ref([
   { label: 'Debug Contract', link: '/debug', icon: 'i-uil-bug' },
 ])
 
-const route = useRoute()
-
 const isDrawOpen = ref(false)
 const drawOpenRef = ref()
 
@@ -15,9 +13,9 @@ onClickOutside(drawOpenRef, () => {
 </script>
 
 <template>
-  <header class="sticky lg:static top-0 navbar bg-base-100">
+  <header class="sticky lg:static top-0 navbar bg-base-100 min-h-10 flex-shrink-0 justify-between z-20 shadow-md shadow-secondary px-0 sm:px-2">
     <div class="navbar-start">
-      <div class="dropdown">
+      <div class="dropdown lg:hidden">
         <label
           tabindex="0" class="btn btn-ghost"
           @click="isDrawOpen = true"
@@ -31,45 +29,24 @@ onClickOutside(drawOpenRef, () => {
           class="menu dropdown-content shadow bg-base-100 rounded-box w-52"
           @click="isDrawOpen = false"
         >
-          <li v-for="item in menu" :key="item.link">
-            <NuxtLink
-              :to="item.link"
-              class="hover:bg-secondary hover:shadow-md focus:!bg-secondary active:!text-neutral py-1.5 px-3 text-sm gap-2 grid grid-flow-col"
-              :class="{ 'bg-secondary shadow-md': route.path === item.link }"
-            >
-              <Icon v-if="item.icon" :name="item.icon" />
-              <span>{{ item.label }}</span>
-            </NuxtLink>
-          </li>
+          <HeaderMenuLinks :menu="menu" />
         </ul>
       </div>
-    </div>
-    <NuxtLink to="/" />
-    <div class="navbar-end" />
-    <!-- <div class="flex items-center">
-      <NuxtLink href="/" class="ml-4 mr-6 hidden items-center gap-2 lg:flex">
-        <img class="h-10 w-10" src="public/logo.svg" alt="logo">
+      <NuxtLink to="/" class="hidden lg:flex items-center gap-2 ml-4 mr-6 shrink-0">
+        <div class="flex relative w-10 h-10">
+          <img class="cursor-pointer" src="public/logo.svg" alt="logo">
+        </div>
         <div class="flex flex-col">
-          <span class="font-bold">affold-ETH-VUE</span>
+          <span class="font-bold leading-tight">Saffold-ETH-VUE</span>
           <span class="text-xs">Ethereum dev stack</span>
         </div>
       </NuxtLink>
-      <ul class="hidden gap-2 lg:flex">
-        <li v-for="item in menu" :key="item.link">
-          <NavButton :item="item" />
-        </li>
+      <ul class="hidden lg:flex lg:flex-nowrap menu menu-horizontal">
+        <HeaderMenuLinks :menu="menu" />
       </ul>
-      <div class="ml-4 lg:hidden">
-        <UDropdown :items="dropMenu" :popper="{ placement: 'bottom-start' }">
-          <UButton trailing-icon="i-uil-align-justify" />
-          <template #item="{ item }">
-            <NavButton :item="item" block />
-          </template>
-        </UDropdown>
-      </div>
     </div>
-    <div class="flex items-center gap-2 mr-4">
+    <div class="navbar-end flex-grow mr-4">
       <WalletConnect />
-    </div> -->
+    </div>
   </header>
 </template>
