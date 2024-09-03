@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/icon',
     '@vueuse/nuxt',
+    '@nuxtjs/color-mode',
   ],
   pinia: {
     storesDirs: ['./stores/**'],

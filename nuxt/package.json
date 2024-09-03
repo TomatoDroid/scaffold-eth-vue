@@ -12,7 +12,10 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@nuxtjs/color-mode": "^3.4.4",
     "@tanstack/vue-query": "^5.51.21",
+    "@uniswap/sdk-core": "^5.3.1",
+    "@uniswap/v2-sdk": "^4.4.1",
     "@wagmi/connectors": "^5.1.7",
     "@wagmi/core": "^2.13.4",
     "@wagmi/vue": "^0.0.36",

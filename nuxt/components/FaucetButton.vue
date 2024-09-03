@@ -11,9 +11,9 @@ const localWalletClient = createWalletClient({
   transport: http(),
 })
 
-const { address, chain: connedtedChain } = useAccount()
+const { address } = useAccount()
 
-const { data: balance } = useWatchBalance({ address })
+const { data: balance } = useWatchBalance({ address: address.value })
 
 const faucetTxn = useTransactor(localWalletClient)
 
@@ -61,22 +61,4 @@ const isBalanceZero = computed(() => {
       <Icon v-else name="i-uil-bill" class="h-4 w-4" />
     </button>
   </div>
-  <!-- <div
-    v-if="connedtedChain?.id === hardhat.id"
-    class="relative"
-  >
-    <div
-      v-if="isBalanceZero"
-      class="ml-1 tooltip tooltip-bottom tooltip-secondary tooltip-open font-bold before:left-auto before:transform-none before:content-[attr(data-tip)] before:right-0"
-      data-tip="Grab funds from faucet"
-    >
-      <UButton
-        class="color-gray"
-        :loading="loading"
-        :disabled="loading"
-        icon="i-uil-bill"
-        cvariant="solid" @click="sendETH"
-      />
-    </div>
-  </div> -->
 </template>

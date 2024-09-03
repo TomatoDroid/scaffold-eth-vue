@@ -16,7 +16,7 @@ export function useWatchBalance(useBalanceParameters: UseBalanceParameters) {
   const { queryKey, ...restUseBalanceReturn } = useBalance(useBalanceParameters)
 
   watch(blockNumber, () => {
-    queryClient.invalidateQueries(queryKey)
+    queryClient.invalidateQueries({ queryKey })
   })
   return restUseBalanceReturn
 }

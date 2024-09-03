@@ -41,7 +41,7 @@ onClickOutside(drawOpenRef, () => {
           <span class="text-xs">Ethereum dev stack</span>
         </div>
       </NuxtLink>
-      <ul class="hidden lg:flex lg:flex-nowrap menu menu-horizontal">
+      <ul class="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">
         <HeaderMenuLinks :menu="menu" />
       </ul>
     </div>
