@@ -27,6 +27,12 @@ export default defineNuxtConfig({
     // Options
   },
   icon: {
+    customCollections: [
+      {
+        prefix: 'my-icon',
+        dir: './assets/my-icons',
+      },
+    ],
     mode: 'svg',
     size: '1.5em',
   },
