@@ -11,7 +11,7 @@ export default <Partial<Config>>{
   ],
   plugins: [daisyui],
   darkTheme: 'dark',
-  darkMode: ['selector', '[data-theme=\'dark\']'],
+  darkMode: 'class',
   // DaisyUI theme colors
   daisyui: {
     themes: [

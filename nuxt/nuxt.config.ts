@@ -8,13 +8,21 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxtjs/tailwindcss',
     '@wagmi/vue/nuxt',
     '@pinia/nuxt',
     '@nuxt/icon',
     '@vueuse/nuxt',
+    '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
   ],
+  colorMode: {
+    preference: 'dark',
+    dataValue: 'theme',
+    classSuffix: '',
+  },
+  tailwindcss: {
+    exposeConfig: true,
+  },
   pinia: {
     storesDirs: ['./stores/**'],
   },
@@ -22,9 +30,6 @@ export default defineNuxtConfig({
     compilerOptions: {
       isCustomElement: tag => tag.startsWith('w3m-'),
     },
-  },
-  tailwindcss: {
-    // Options
   },
   icon: {
     customCollections: [
