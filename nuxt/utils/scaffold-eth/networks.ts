@@ -90,3 +90,19 @@ export function getBlockExplorerTxLink(chainId: number, txHash: string) {
 
   return `https://${blockExplorerTxURL}/tx/${txHash}`
 }
+/**
+ * Gives the block explorer URL for a given address.
+ * Defaults to Etherscan if no (wagmi) block explorer is configured for the network.
+ */
+export function getBlockExplorerAddressLink(network: chains.Chain, address: string) {
+  const blockExplorerBaseURL = network.blockExplorers?.default.url
+  if (network.id === chains.hardhat.id) {
+    return `/blockexplorer/address/${address}`
+  }
+
+  if (!blockExplorerBaseURL) {
+    return `https://etherscan.io/address/${address}`
+  }
+
+  return `${blockExplorerBaseURL}/address/${address}`
+}

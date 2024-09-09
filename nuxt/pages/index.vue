@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { useAccount } from '@wagmi/vue'
 
+const { address: connectedAddress } = useAccount()
 </script>
 
 <template>
@@ -13,7 +15,7 @@
         <p class="my-2 font-medium">
           Connected Address:
         </p>
-        AddressCom
+        <Address :address="connectedAddress" />
       </div>
       <p class="text-center text-lg">
         Get started by editing

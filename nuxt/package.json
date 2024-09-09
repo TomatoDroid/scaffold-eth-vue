@@ -20,6 +20,7 @@
     "@wagmi/core": "^2.13.4",
     "@wagmi/vue": "^0.0.36",
     "@web3modal/wagmi": "^5.1.1",
+    "blo": "^1.2.0",
     "burner-connector": "^0.0.8",
     "daisyui": "^4.12.10",
     "nuxt": "^3.12.4",
