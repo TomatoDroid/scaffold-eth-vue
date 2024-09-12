@@ -6,6 +6,7 @@ useSeoMeta({
 </script>
 
 <template>
+  <DebugContracts />
   <div class="text-center mt-8 bg-secondary p-10">
     <h1 class="text-4xl my-0">
       Debug Contracts

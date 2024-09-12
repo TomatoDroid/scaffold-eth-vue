@@ -2,11 +2,9 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-
   devServer: {
     port: 3001,
   },
-
   modules: [
     '@wagmi/vue/nuxt',
     '@pinia/nuxt',
@@ -41,4 +39,11 @@ export default defineNuxtConfig({
     mode: 'svg',
     size: '1.5em',
   },
+  components: [
+    {
+      path: '~/components/scaffold-eth',
+      pathPrefix: false,
+    },
+    '~/components',
+  ],
 })
