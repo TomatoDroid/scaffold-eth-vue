@@ -20,12 +20,14 @@
     "@wagmi/core": "^2.13.4",
     "@wagmi/vue": "^0.0.36",
     "@web3modal/wagmi": "^5.1.1",
+    "abitype": "^1.0.6",
     "blo": "^1.2.0",
     "burner-connector": "^0.0.8",
     "daisyui": "^4.12.10",
     "nuxt": "^3.12.4",
     "viem": "^2.19.1",
-    "vue": "latest"
+    "vue": "latest",
+    "vue-toastification": "2.0.0-rc.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.1",

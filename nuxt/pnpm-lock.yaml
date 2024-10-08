@@ -17,6 +17,9 @@ importers:
       '@uniswap/v2-sdk':
         specifier: ^4.4.1
         version: 4.4.1
+      abitype:
+        specifier: ^1.0.6
+        version: 1.0.6
       blo:
         specifier: ^1.2.0
         version: 1.2.0
@@ -29,6 +32,9 @@ importers:
       vue:
         specifier: latest
         version: 3.4.38
+      vue-toastification:
+        specifier: 2.0.0-rc.5
+        version: 2.0.0-rc.5(vue@3.4.38)
     devDependencies:
       '@iconify-json/uil':
         specifier: ^1.1.9
@@ -1209,6 +1215,17 @@ packages:
 
   abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
+
+  abitype@1.0.6:
+    resolution: {integrity: sha512-MMSqYh4+C/aVqI2RQaWqbvI4Kxo5cQV40WQ4QFtDnNzCkqChm8MuENhElmynZlO0qUy/ObkEUaXtKqYnx1Kp3A==}
+    peerDependencies:
+      typescript: '>=5.0.4'
+      zod: ^3 >=3.22.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+      zod:
+        optional: true
 
   abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -3572,6 +3589,11 @@ packages:
     peerDependencies:
       vue: ^3.2.0
 
+  vue-toastification@2.0.0-rc.5:
+    resolution: {integrity: sha512-q73e5jy6gucEO/U+P48hqX+/qyXDozAGmaGgLFm5tXX4wJBcVsnGp4e/iJqlm9xzHETYOilUuwOUje2Qg1JdwA==}
+    peerDependencies:
+      vue: ^3.0.2
+
   vue@3.4.38:
     resolution: {integrity: sha512-f0ZgN+mZ5KFgVv9wz0f4OgVKukoXtS3nwET4c2vLBGQR50aI8G0cqbFtLlX9Yiyg3LFGBitruPHt2PxwTduJEw==}
     peerDependencies:
@@ -4975,6 +4997,8 @@ snapshots:
       - vue
 
   abbrev@1.1.1: {}
+
+  abitype@1.0.6: {}
 
   abort-controller@3.0.0:
     dependencies:
@@ -7549,6 +7573,10 @@ snapshots:
   vue-router@4.4.3(vue@3.4.38):
     dependencies:
       '@vue/devtools-api': 6.6.3
+      vue: 3.4.38
+
+  vue-toastification@2.0.0-rc.5(vue@3.4.38):
+    dependencies:
       vue: 3.4.38
 
   vue@3.4.38:

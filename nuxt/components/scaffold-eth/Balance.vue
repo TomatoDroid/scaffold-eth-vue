@@ -36,7 +36,7 @@ const formatterBalance = computed(() => {
   </div>
   <div
     v-else-if="!address || isLoading || balance === null || (nativeCurrency.isFetching && nativeCurrency.price === 0)"
-    class="animate-pulse flex space-x-4"
+    class="animate-pulse flex space-x-4 items-center"
   >
     <div class="rounded-md bg-slate-300 h-6 w-6" />
     <div class="flex items-center space-y-6">
@@ -48,15 +48,15 @@ const formatterBalance = computed(() => {
     class="btn btn-sm btn-ghost flex items-center hover:bg-transparent"
     @click="toggleDisplayUsdMode"
   >
-    <div class="w-full">
-      <div v-if="displayUsdMode" class="flex items-center justify-center">
+    <div class="w-full flex items-center justify-center">
+      <template v-if="displayUsdMode">
         <span class="text-[0.8em] font-bold mr-1">$</span>
         <span>{{ formatterBalance * nativeCurrency.price }}</span>
-      </div>
-      <div v-else class="flex items-center justify-center">
+      </template>
+      <template v-else>
         <span>{{ formatterBalance.toFixed(4) }}</span>
         <span class="text-[0.8em] font-bold ml-1">{{ targetNetwork.nativeCurrency.symbol }}</span>
-      </div>
+      </template>
     </div>
   </button>
 </template>

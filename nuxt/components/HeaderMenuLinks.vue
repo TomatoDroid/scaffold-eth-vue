@@ -1,6 +1,13 @@
 <script setup lang="ts">
+export interface MenuProps {
+  label: string
+  link: string
+  icon?: string
+
+}
+
 defineProps<{
-  menu: ({ label: string, link: string, icon?: undefined })[]
+  menu: MenuProps[]
 }>()
 
 const route = useRoute()

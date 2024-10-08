@@ -13,7 +13,7 @@ onClickOutside(drawOpenRef, () => {
 </script>
 
 <template>
-  <header class="sticky lg:static top-0 navbar bg-base-100 min-h-10 flex-shrink-0 justify-between z-20 shadow-md shadow-secondary px-0 sm:px-2">
+  <header class="sticky lg:static top-0 navbar bg-<Suspense> is an experimental feature and its API will likely change. min-h-10 flex-shrink-0 justify-between z-20 shadow-md shadow-secondary px-0 sm:px-2">
     <div class="navbar-start">
       <div class="dropdown lg:hidden">
         <label
