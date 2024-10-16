@@ -2,7 +2,6 @@
 import type { Abi, AbiFunction, Address } from 'viem'
 // TODO autoimport https://github.com/wevm/wagmi/issues/3977
 import { useReadContract } from '@wagmi/vue'
-import { useToast } from 'vue-toastification'
 import { notification } from './nitification'
 import { getParsedError } from '~/utils/scaffold-eth/getParseError'
 

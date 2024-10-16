@@ -13,7 +13,7 @@ type TupleProps = {
 
 export const Tuple = ({ abiTupleParameter, setParentForm, parentStateObjectKey }: TupleProps) => {
   const [form, setForm] = useState<Record<string, any>>(() => getInitalTupleFormState(abiTupleParameter));
-
+  debugger;
   useEffect(() => {
     const values = Object.values(form);
     const argsStruct: Record<string, any> = {};

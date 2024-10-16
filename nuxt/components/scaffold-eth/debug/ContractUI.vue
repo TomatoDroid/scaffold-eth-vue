@@ -46,6 +46,36 @@ const { data: deployedContractData, isLoading: deployedContractDataLoading } = u
           />
         </div>
       </div>
+      <div class="col-span-1 lg:col-span-2 flex flex-col gap-6">
+        <div class="z-10">
+          <div class="bg-base-100 rounded-3xl shadow-md shadow-secondary border border-base-300 flex flex-col mt-10 relative">
+            <div class="h-[5rem] w-[5.5rem] bg-base-300 absolute self-start rounded-[22px] -top-[38px] -left-[1px] -z-10 py-[0.65rem] shadow-lg shadow-base-300">
+              <div class="flex items-center justify-center space-x-2">
+                <p class="my-0 text-sm">
+                  Read
+                </p>
+              </div>
+            </div>
+            <div class="p-5 divide-y divide-base-300">
+              <ContractReadMethods :deployed-contract-data />
+            </div>
+          </div>
+        </div>
+        <div class="z-10">
+          <div class="bg-base-100 rounded-3xl shadow-md shadow-secondary border border-base-300 flex flex-col mt-10 relative">
+            <div class="h-[5rem] w-[5.5rem] bg-base-300 absolute self-start rounded-[22px] -top-[38px] -left-[1px] -z-10 py-[0.65rem] shadow-lg shadow-base-300">
+              <div class="flex items-center justify-center space-x-2">
+                <p class="my-0 text-sm">
+                  Write
+                </p>
+              </div>
+            </div>
+            <div class="p-5 divide-y divide-base-300">
+              ContractWriteMethods
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

@@ -19,15 +19,10 @@ export type DisplayContent =
 
 export type ResultFontSize = 'sm' | 'base' | 'xs' | 'lg' | 'xl' | '2xl' | '3xl'
 
-const props = withDefaults(
-  defineProps<{
-    displayContent: DisplayContent | DisplayContent[]
-    fontSize: ResultFontSize
-  }>(),
-  {
-    fontSize: 'base',
-  },
-)
+const props = defineProps<{
+  displayContent: DisplayContent | DisplayContent[]
+  fontSize: ResultFontSize
+}>()
 
 function Display() {
   if (props.displayContent == null) {
