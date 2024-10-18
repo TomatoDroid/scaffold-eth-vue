@@ -53,6 +53,7 @@ const displayAddress = computed(() => {
   if (fetchedEns.value) {
     return fetchedEns.value
   }
+  // biome-ignore lint/style/noUselessElse: <explanation>
   else if (props.format === 'long') {
     return checkSumAddress
   }

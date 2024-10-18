@@ -34,7 +34,9 @@ type AddExternalFlag<T> = {
   };
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 function deepMergeContracts<L extends Record<PropertyKey, any>, E extends Record<PropertyKey, any>>(local: L, external: E) {
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   const result: Record<PropertyKey, any> = {}
   const allKeys = Array.from(new Set([...Object.keys(external), ...Object.keys(local)]))
   for (const key of allKeys) {
@@ -74,6 +76,7 @@ export const contracts = contractsData as GenericContractsDeclaration | null
 
 type ConfiguredChainId = (typeof scaffoldConfig)['targetNetworks'][0]['id']
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 type IsContractDeclarationMissing<TYes, TNo> = typeof contractsData extends { [key in ConfiguredChainId]: any }
   ? TNo
   : TYes
@@ -105,7 +108,9 @@ export type AbiFunctionOutputs<TAbi extends Abi, TFunctionName extends string> =
 >['outputs']
 
 export type AbiFunctionReturnType<TAbi extends Abi, TFunctionName extends string> = IsContractDeclarationMissing<
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   any,
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   AbiParametersToPrimitiveTypes<AbiFunctionOutputs<TAbi, TFunctionName>> extends readonly [any]
     ? AbiParametersToPrimitiveTypes<AbiFunctionOutputs<TAbi, TFunctionName>>[0]
     : AbiParametersToPrimitiveTypes<AbiFunctionOutputs<TAbi, TFunctionName>>
@@ -117,9 +122,9 @@ export type AbiEventInputs<TAbi extends Abi, TEventName extends ExtractAbiEventN
 >['inputs']
 
 export enum ContractCodeStatus {
-  LOADING,
-  DEPLOYED,
-  NOT_FOUND,
+  LOADING = 0,
+  DEPLOYED = 1,
+  NOT_FOUND = 2,
 }
 
 type AbiStateMutability = 'pure' | 'view' | 'nonpayable' | 'payable'
@@ -144,6 +149,7 @@ export type FunctionNamesWithInputs<
 
 type Expand<T> = T extends object ? (T extends infer O ? { [K in keyof O]: O[K] } : never) : T
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 type UnionToIntersection<U> = Expand<(U extends any ? (k: U) => void : never) extends (k: infer I) => void ? I : never>
 
 type OptionalTupple<T> = T extends readonly [infer H, ...infer R] ? readonly [H | undefined, ...OptionalTupple<R>] : T
@@ -188,6 +194,7 @@ export type ScaffoldWriteContractVariables<
   Omit<WriteContractParameters, 'chainId' | 'abi' | 'address' | 'functionName' | 'args'>
 >
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 type WriteVariables = WriteContractVariables<Abi, string, any[], Config, number>
 
 export interface TransactorFuncOptions {
@@ -217,6 +224,7 @@ export type UseScaffoldEventConfig<
   Omit<UseWatchContractEventParameters, 'onLogs' | 'address' | 'abi' | 'eventName'> & {
     onLogs: (
       logs: Simplify<
+        // biome-ignore lint/suspicious/noExplicitAny: <explanation>
         Omit<Log<bigint, number, any>, 'args' | 'eventName'> & {
           args: Record<string, unknown>
           eventName: string
@@ -251,11 +259,13 @@ export type EventFilters<
   TContractName extends ContractName,
   TEventName extends ExtractAbiEventNames<ContractAbi<TContractName>>,
 > = IsContractDeclarationMissing<
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   any,
   IndexedEventInputs<TContractName, TEventName> extends never
     ? never
     : {
         [Key in IsContractDeclarationMissing<
+          // biome-ignore lint/suspicious/noExplicitAny: <explanation>
           any,
           IndexedEventInputs<TContractName, TEventName>['name']
         >]?: AbiParameterToPrimitiveType<Extract<IndexedEventInputs<TContractName, TEventName>, { name: Key }>>;
@@ -292,6 +302,7 @@ export type UseScaffoldEventHistoryData<
   >,
 > =
   | IsContractDeclarationMissing<
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
     any[],
     {
       log: Log<bigint, number, false, TEvent, false, [TEvent], TEventName>

@@ -5,6 +5,7 @@ const props = defineProps<{
   contractName: ContractName
 }>()
 
+const refreshDisplayVariables = ref(false)
 const { targetNetwork } = useTargetNetwork()
 const networkColor = useNetworkColor()
 const { data: deployedContractData, isLoading: deployedContractDataLoading } = useDeployedContractInfo(props.contractName)
@@ -41,7 +42,7 @@ const { data: deployedContractData, isLoading: deployedContractDataLoading } = u
         </div>
         <div class="bg-base-300 rounded-3xl px-6 lg:px-8 py-4 shadow-lg shadow-base-300">
           <ContractVariables
-            :refresh-display-variables="true"
+            :refresh-display-variables="refreshDisplayVariables"
             :deployed-contract-data="deployedContractData"
           />
         </div>
@@ -71,7 +72,10 @@ const { data: deployedContractData, isLoading: deployedContractDataLoading } = u
               </div>
             </div>
             <div class="p-5 divide-y divide-base-300">
-              ContractWriteMethods
+              <ContractWriteMethods
+                :deployed-contract-data
+                @change="refreshDisplayVariables = !refreshDisplayVariables"
+              />
             </div>
           </div>
         </div>

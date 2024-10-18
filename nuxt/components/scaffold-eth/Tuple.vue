@@ -2,12 +2,11 @@
 import ContractInput from './debug/ContractInput.vue'
 import { replacer } from '~/utils/scaffold-eth/common'
 import type { AbiParameterTuple } from '~/utils/scaffold-eth/contract'
-import { getFunctionInputKey, getInitialFormState, getInitialTupleFormState } from '~/utils/scaffold-eth/utilsContract'
+import { getFunctionInputKey, getInitialTupleFormState } from '~/utils/scaffold-eth/utilsContract'
 
 interface TupleProps {
   abiTupleParameter: AbiParameterTuple
   parentStateObjectKey: string
-//   parentForm?: Record<string, any>
 }
 
 const { abiTupleParameter, parentStateObjectKey } = defineProps<TupleProps>()
