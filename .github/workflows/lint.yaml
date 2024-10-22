@@ -33,11 +33,8 @@ jobs:
       - name: Run hardhat node, deploy contracts (& generate contracts typescript output)
         run: pnpm run chain & pnpm run deploy
 
-      - name: Run nextjs lint
-        run: pnpm run next:lint --max-warnings=0
-
-      - name: Check typings on nextjs
-        run: pnpm run next:check-types
+      - name: Run nuxtjs lint
+        run: pnpm run nuxt:lint --max-warnings=0
 
       - name: Run hardhat lint
         run: pnpm run hardhat:lint --max-warnings=0

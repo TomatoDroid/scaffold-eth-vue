@@ -30,7 +30,8 @@
     "vercel": "pnpm --filter @se-2/nextjs vercel",
     "vercel:yolo": "pnpm --filter @se-2/nextjs vercel:yolo",
     "dev": "pnpm --filter @se-2/nuxtjs dev",
-    "lint:fix": "pnpm --filter @se-2/nuxtjs lint:fix"
+    "lint:fix": "pnpm --filter @se-2/nuxtjs lint:fix",
+    "nuxt:lint": "pnpm --filter @se-2/nuxtjs lint"
   },
   "devDependencies": {
     "husky": "^8.0.1",
