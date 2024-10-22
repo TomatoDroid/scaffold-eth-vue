@@ -9,7 +9,7 @@ const { address: connectedAddress } = useAccount()
     <div class="px-5">
       <h1 class="text-center">
         <span class="block text-2xl mb-2">Welcome to</span>
-        <span class="block text-4xl font-bold">Scaffold-ETH-VUE</span>
+        <span class="block text-4xl font-bold">Scaffold-ETH-<span class="text-green-400">VUE</span></span>
       </h1>
       <div class="flex items-center justify-center space-x-2 flex-col sm:flex-row">
         <p class="my-2 font-medium">

@@ -37,7 +37,7 @@ onClickOutside(drawOpenRef, () => {
           <img class="cursor-pointer" src="public/logo.svg" alt="logo">
         </div>
         <div class="flex flex-col">
-          <span class="font-bold leading-tight">Saffold-ETH-VUE</span>
+          <span class="font-bold leading-tight">Saffold-ETH-<span class="text-green-400">VUE</span></span>
           <span class="text-xs">Ethereum dev stack</span>
         </div>
       </NuxtLink>
