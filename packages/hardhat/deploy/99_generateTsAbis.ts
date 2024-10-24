@@ -101,7 +101,7 @@ function getContractDataFromDeployments() {
  */
 const generateTsAbis: DeployFunction = async function () {
   // const TARGET_DIR = "../nextjs/contracts/";
-  const TARGET_DIR = "../../nuxt/contracts/";
+  const TARGET_DIR = "../nuxt/contracts/";
   const allContractsData = getContractDataFromDeployments();
 
   const fileContent = Object.entries(allContractsData).reduce((content, [chainId, chainConfig]) => {
